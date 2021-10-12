@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace _2
+namespace _3
 {
     class Program
     {
-        //Добавлены запрсы переменных для арифметического примера в строках 8,15,22.
+        //Вывод “Должно быть больше” или “Должно быть меньше”
         public static string Inquiry1()
         {
             Console.WriteLine("Enter a:");
@@ -19,15 +19,14 @@ namespace _2
             return b;
         }
 
-        public static double SumEnd() 
+        public static double SumEnd()
         {
             double sum;
             Console.WriteLine("Enter Resoult:");
             sum = Convert.ToDouble(Console.ReadLine());
             return sum;
         }
-        //Использование запросов в строках 36,37,44.
-        //Вывод “Правильно” или “Неправильно” суммы в строках 49,54.
+        //Вывод “Должно быть больше” или “Должно быть меньше” в строках 55, 56.
         static double Sum()
         {
             double sum = 0, sum1 = 0, sum2 = 0, number1, number2;
@@ -45,7 +44,7 @@ namespace _2
                 {
                     sum1 = SumEnd();
                     sum2 = number1 + number2;
-                   
+
                     if (sum1 == sum2)
                     {
                         sum = sum1;
@@ -53,10 +52,12 @@ namespace _2
                     }
                     else
                     {
+                        if (sum1 < sum2) { Console.WriteLine($"Should be more then {sum1}!"); }
+                        else if (sum1 > sum2) { Console.WriteLine($"Should be less then {sum1}!"); }
                         sum = sum2;
-                        Console.WriteLine($"Inquari is false Answer: {sum}");
+                        Console.WriteLine($"Inquari Answer: {sum}");
                     }
-                    
+
                     q = true;
                 }
                 else
@@ -71,6 +72,7 @@ namespace _2
 
             return sum;
         }
+
 
         static void Main(string[] args)
         {
